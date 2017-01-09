@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>test</title>
+        <style type="text/css" media="screen">
+            * {
+                box-sizing: border-box;
+            }
+
+            html {
+                height: 100%;
+            }
+
+            body {
+                align-items: center;
+                background: #000;
+                color: #fff;
+                display: flex;
+                font-family: 'Segoe UI';
+                font-weight: 300;
+                height: 100%;
+                justify-content: center;
+                overflow: hidden;
+            }
+
+            @keyframes scroll {
+            	0% { top: 100%; }
+            	100% { top: -170%; }
+            }
+
+            .wrap {
+                bottom: 0;
+                height: 100%;
+                overflow: hidden;
+                position: absolute;
+                width: 100%;
+                transform-origin: 50% 100%;
+	            transform: perspective(300px) rotateX(25deg);
+            }
+
+            .wrapcontent {
+            	position: absolute;
+            	/*animation: scroll 50s linear 0.1s infinite;*/
+                font-weight: 700;
+                font-size: 40px;
+                line-height: 2.5;
+                text-align: justify;
+                transition: all 1s ease-out;
+            }
+
+            .scrollplease {
+                font-size: 30px;
+                transition: all 0.5s ease-out;
+            }
+
+            .scrollplease--hidden {
+                opacity: 0;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="scrollplease">
+            scroll please
+        </div>
+        <div class="wrap">
+            <div class="wrapcontent" style="top: 100%;">
+                Articulate.js uses the Speech Synthesis interface of the Web Speech API. It is currently supported in all the major browsers, including the latest versions of Edge, Safari, Chrome, Opera, Firefox, iOS Safari, and Chrome for Android.
+                There are two window objects of the Speech Synthesis interface that are used to enable the browser to speak: SpeechSynthesis and SpeechSynthesisUtterance. The first step is to create an instance of the SpeechSynthesisUtterance object and designate the text you would like spoken. If desired, you can set additional properties such as the rate, pitch, volume, and voice.
+                To begin speaking, this object is passed as a parameter to the SpeechSynthesis.speak() method. Other playback functionality, such as pausing, resuming, and cancelling, are all methods of the SpeechSynthesis object. A useful demo from Microsoft lets you play around with these features.
+                At the end of this article, there are many resources listed that walk you through the intricacies of this functionality and provide additional examples.
+                Articulate.js uses the Speech Synthesis interface of the Web Speech API. It is currently supported in all the major browsers, including the latest versions of Edge, Safari, Chrome, Opera, Firefox, iOS Safari, and Chrome for Android.
+                There are two window objects of the Speech Synthesis interface that are used to enable the browser to speak: SpeechSynthesis and SpeechSynthesisUtterance. The first step is to create an instance of the SpeechSynthesisUtterance object and designate the text you would like spoken. If desired, you can set additional properties such as the rate, pitch, volume, and voice.
+                To begin speaking, this object is passed as a parameter to the SpeechSynthesis.speak() method. Other playback functionality, such as pausing, resuming, and cancelling, are all methods of the SpeechSynthesis object. A useful demo from Microsoft lets you play around with these features.
+                At the end of this article, there are many resources listed that walk you through the intricacies of this functionality and provide additional examples.
+                Articulate.js uses the Speech Synthesis interface of the Web Speech API. It is currently supported in all the major browsers, including the latest versions of Edge, Safari, Chrome, Opera, Firefox, iOS Safari, and Chrome for Android.
+                There are two window objects of the Speech Synthesis interface that are used to enable the browser to speak: SpeechSynthesis and SpeechSynthesisUtterance. The first step is to create an instance of the SpeechSynthesisUtterance object and designate the text you would like spoken. If desired, you can set additional properties such as the rate, pitch, volume, and voice.
+                To begin speaking, this object is passed as a parameter to the SpeechSynthesis.speak() method. Other playback functionality, such as pausing, resuming, and cancelling, are all methods of the SpeechSynthesis object. A useful demo from Microsoft lets you play around with these features.
+                At the end of this article, there are many resources listed that walk you through the intricacies of this functionality and provide additional examples.
+                Articulate.js uses the Speech Synthesis interface of the Web Speech API. It is currently supported in all the major browsers, including the latest versions of Edge, Safari, Chrome, Opera, Firefox, iOS Safari, and Chrome for Android.
+                There are two window objects of the Speech Synthesis interface that are used to enable the browser to speak: SpeechSynthesis and SpeechSynthesisUtterance. The first step is to create an instance of the SpeechSynthesisUtterance object and designate the text you would like spoken. If desired, you can set additional properties such as the rate, pitch, volume, and voice.
+                To begin speaking, this object is passed as a parameter to the SpeechSynthesis.speak() method. Other playback functionality, such as pausing, resuming, and cancelling, are all methods of the SpeechSynthesis object. A useful demo from Microsoft lets you play around with these features.
+                At the end of this article, there are many resources listed that walk you through the intricacies of this functionality and provide additional examples.
+                Articulate.js uses the Speech Synthesis interface of the Web Speech API. It is currently supported in all the major browsers, including the latest versions of Edge, Safari, Chrome, Opera, Firefox, iOS Safari, and Chrome for Android.
+                There are two window objects of the Speech Synthesis interface that are used to enable the browser to speak: SpeechSynthesis and SpeechSynthesisUtterance. The first step is to create an instance of the SpeechSynthesisUtterance object and designate the text you would like spoken. If desired, you can set additional properties such as the rate, pitch, volume, and voice.
+                To begin speaking, this object is passed as a parameter to the SpeechSynthesis.speak() method. Other playback functionality, such as pausing, resuming, and cancelling, are all methods of the SpeechSynthesis object. A useful demo from Microsoft lets you play around with these features.
+                At the end of this article, there are many resources listed that walk you through the intricacies of this functionality and provide additional examples.
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            (function(window,document) {
+
+            var prefix = "", _addEventListener, support;
+
+            // detect event model
+            if ( window.addEventListener ) {
+                _addEventListener = "addEventListener";
+            } else {
+                _addEventListener = "attachEvent";
+                prefix = "on";
+            }
+
+            // detect available wheel event
+            support = "onwheel" in document.createElement("div") ? "wheel" : // Modern browsers support "wheel"
+                      document.onmousewheel !== undefined ? "mousewheel" : // Webkit and IE support at least "mousewheel"
+                      "DOMMouseScroll"; // let's assume that remaining browsers are older Firefox
+
+            window.addWheelListener = function( elem, callback, useCapture ) {
+                _addWheelListener( elem, support, callback, useCapture );
+
+                // handle MozMousePixelScroll in older Firefox
+                if( support == "DOMMouseScroll" ) {
+                    _addWheelListener( elem, "MozMousePixelScroll", callback, useCapture );
+                }
+            };
+
+            function _addWheelListener( elem, eventName, callback, useCapture ) {
+                elem[ _addEventListener ]( prefix + eventName, support == "wheel" ? callback : function( originalEvent ) {
+                    !originalEvent && ( originalEvent = window.event );
+
+                    // create a normalized event object
+                    var event = {
+                        // keep a ref to the original event object
+                        originalEvent: originalEvent,
+                        target: originalEvent.target || originalEvent.srcElement,
+                        type: "wheel",
+                        deltaMode: originalEvent.type == "MozMousePixelScroll" ? 0 : 1,
+                        deltaX: 0,
+                        deltaY: 0,
+                        deltaZ: 0,
+                        preventDefault: function() {
+                            originalEvent.preventDefault ?
+                                originalEvent.preventDefault() :
+                                originalEvent.returnValue = false;
+                        }
+                    };
+
+                    // calculate deltaY (and deltaX) according to the event
+                    if ( support == "mousewheel" ) {
+                        event.deltaY = - 1/40 * originalEvent.wheelDelta;
+                        // Webkit also support wheelDeltaX
+                        originalEvent.wheelDeltaX && ( event.deltaX = - 1/40 * originalEvent.wheelDeltaX );
+                    } else {
+                        event.deltaY = originalEvent.detail;
+                    }
+
+                    // it's time to fire the callback
+                    return callback( event );
+
+                }, useCapture || false );
+            }
+
+            })(window,document);
+        </script>
+
+        <script type="text/javascript">
+
+            let starwars = {
+                universe: document.getElementsByClassName('wrap')[0],
+                ship: document.getElementsByClassName('wrapcontent')[0],
+
+                shipLimit: function () {
+                    return (this.ship.offsetHeight/this.ship.offsetTop) * -100;
+                },
+
+                getCoordinates: function (object) {
+                    let top = 0;
+                    if (typeof object !== 'undefined') {
+                        top = object.style.top.toString();
+                        top = top.substr(0, top.length - 1);
+                    }
+                    return top;
+                },
+
+                jumpToNextGalaxy: function (current, distance, limit) {
+                    if (current >= limit) {
+                        let topPosition = parseInt(current) - parseInt(distance) + '%';
+                        this.ship.style.top = topPosition;
+                    }
+                },
+
+                returnToPreviousGalaxy: function (current, distance) {
+                    if (current <= 100) {
+                        let topPosition = parseInt(current) + parseInt(distance) + '%';
+                        this.ship.style.top = topPosition;
+                    }
+                }
+            };
+
+            let limit = starwars.shipLimit();
+
+            window.addWheelListener(document, function(ship) {
+                let direction = ship.deltaY;
+                let shipPosition = starwars.getCoordinates(starwars.ship);
+                let shipSpeed = 5;
+
+                if (direction === 100) {
+                    starwars.jumpToNextGalaxy(shipPosition, shipSpeed, limit);
+                }
+
+                if (direction === -100) {
+                    starwars.returnToPreviousGalaxy(shipPosition, shipSpeed)
+                }
+
+                ship.preventDefault();
+            });
+
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
