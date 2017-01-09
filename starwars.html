@@ -186,6 +186,11 @@
                         let topPosition = parseInt(current) + parseInt(distance) + '%';
                         this.ship.style.top = topPosition;
                     }
+                },
+
+                hideNotification: function () {
+                    document.getElementsByClassName('scrollplease')[0]
+                            .classList.add('scrollplease--hidden');
                 }
             };
 
@@ -195,6 +200,8 @@
                 let direction = ship.deltaY;
                 let shipPosition = starwars.getCoordinates(starwars.ship);
                 let shipSpeed = 5;
+
+                starwars.hideNotification();
 
                 if (direction === 100) {
                     starwars.jumpToNextGalaxy(shipPosition, shipSpeed, limit);
